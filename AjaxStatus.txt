@@ -1,0 +1,13 @@
+readyState = El estado del XMLHttpRequest
+0 = reques sin iniciar
+1 = conexion establecida
+2 = reques recibido
+3 = procesando el request
+4 = request finalizado y respuesta lista
+
+onreadystatechange define una funcion que debera ser llamada cuando el estado cambie
+
+responseTest string
+responseXML
+200 = correcto/ok
+403 prohibido

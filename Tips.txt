@@ -1,0 +1,35 @@
+debido a que los prepared statements garantizan que no haya inyecci�n SQL lo podemos hacer asi
+
+pero tambi�n podriamos asegurarnos de que no entre codigo malicioso utilizando
+
+$password = htmlspecialchars(trim("$_POST['password']"));
+$opciones = array(
+ 'cost' => 12
+ );
+ $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
+
+PASSWORD_BCRYPT va a utilizar  un algoritmo llamado CRYPT_BLOWFISH, la diferencia entre CRYPT_BLOWFISH y MD5 es que uno se dice que es encriptar (blowfish) mientras que MD5 se encarga de hashear, pero su diferencia es que mientras que MD5 se puede transformar a hash y tambi�n se puede convertir de hash a texto plano, el crypt_blowfish solo puede ser hecho en un sentido, es decir puedes cifrarlo o hashearlo pero no puedes hacer el proceso de convertir el hash de 60 caracteres a una palabra por ejemplo
+Si lo del login de nuevo, podrías crear una nueva variable:
+
+$_SESSION['logueado'] = true;
+
+asi:
+
+if(password_verify($password, $password_admin)) {
+ session_start();
+ $_SESSION['usuario'] = $usuario_admin;
+ $_SESSION['nombre'] = $nombre_admin;
+ $_SESSION['nivel'] = $nivel;
+ $_SESSION['id'] = $id_admin;
+  $_SESSION['logueado'] = true;
+ $respuesta = array(
+   'respuesta' => 'exitoso',
+   'usuario' => $nombre_admin
+ );
+entonces, antes de todo en el login.php tendrías que tener
+
+<?php
+session_start();
+if($_SESSION['logueado']) {
+   header('Location: admin-area.php');
+}
