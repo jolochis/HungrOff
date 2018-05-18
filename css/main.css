@@ -96,7 +96,26 @@ textarea {
    ========================================================================== */
 html{
      box-sizing: border-box;
+     background-image: url(../img/homorec.jpg);
+     height: 50vw;
+     background-position:  top center  ;
+     background-attachment: fixed;
+     background-size: cover;
+     background-repeat: no-repeat;
+
+
    }
+   @media only screen and (min-width:768px) {
+     html{
+
+       background-image: url("../img/homorec.jpg");
+
+       background-attachment: scroll;
+       background-size: 100%;
+
+     }
+   }
+
 *,*::before,*::after{
      box-sizing: inherit;
    }
@@ -108,9 +127,16 @@ html{
      text-align: center;
    }
 .contenedor{
-     width: 98%;
-     margin: 0 auto;
+     width: 100%;
+
    }
+
+@media only screen and (min-width:768px) {
+  .contenedor{
+       width: 98%;
+       margin: 0 auto;
+     }
+}
 .seccion{
      padding: 30px 0;
    }
@@ -171,27 +197,34 @@ html{
   margin: 0;
 }
 */
+/** Registro bootstrap */
+
 div.hero{
   background-image: url(../img/hodemorec.jpg);
   height: 50vw;
   background-position:  top center  ;
-  background-attachment: fixed;
-  background-size: cover;
-
-  padding: 50px;
-}
-html{
-  background-image: url(../img/hodemorec.jpg);
-  height: 50vw;
-  background-position:  top center  ;
-  background-attachment: fixed;
-  background-size: cover;
+  background-attachment:scroll;
+  background-size: 100% 135%;
   background-repeat: no-repeat;
   padding: 50px;
+  width: 100%;
+}
+
+@media only screen and (min-width:768px) {
+  div.hero{
+    background-image: url("../img/hodemorec.jpg");
+    height: 40vw;
+    background-position:  top center  ;
+    background-attachment: fixed;
+    background-size:  100% 120%;
+    background-repeat: no-repeat;
+    padding: 50px;
+  }
 }
 div.ingreso{
-
-
+/*background:#F2FBF4;*/
+background:#FFE0DA;
+background: linear-gradient(to top right, #FFE0DA,#E2725B)
 }
 div.ingreso a{
 color: blue;
@@ -285,15 +318,35 @@ div.campo input{
 table{
 
   background: white;
+  width: 40%;
+}
+.tabla{
+background: linear-gradient(to top right, white, lightblue)
 
 }
 thead tr th{
   color: red;
   padding: 10px;
 }
-
+@media only screen and (min-width:768px) {
+  thead tr th{
+    text-align: center;
+  }
+}
+@media only screen and (min-width:768px) {
+  tbody{
+    text-align: center;
+  }
+}
 tbody tr td{
   padding: 7px;
+  line-height: 1  ;
+}
+@media only screen and (min-width:768px) {
+  tbody tr td{
+    padding: 7px;
+
+  }
 }
 tfoot{
   color:#667574;
@@ -303,14 +356,15 @@ div.testimoniales{
   padding-bottom: 20px;
 }
 div.testimonial{
+
   padding: 5px;
 
 }
 @media only screen and (min-width: 768px){
  div.testimonial{
  float: left;
- width: 50%;
 
+ width: 50%;
 
   }
 }
@@ -320,7 +374,7 @@ blockquote{
   border: 1px solid  #e1e1e1;
   position: relative;
   margin: 0 0 10px 0;
-  padding: 0 20px 0 65px;
+  padding: 15px 20px 0 65px;
   height: 500px;
 }
 blockquote p{

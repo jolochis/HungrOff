@@ -1,0 +1,14 @@
+<?php
+ini_set('display_errors', 1);
+
+try {
+include_once("includes/funciones/conexion.php");
+    
+} catch (\Exception $e) {
+
+}
+
+
+
+
+ ?>

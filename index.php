@@ -1,3 +1,7 @@
+<div class="ingreso">
+  <a href="registro.php">Registrate</a>
+  <a href="login.php">Ingresa</a>
+</div>
 <?php
 ini_set('display_errors', 1);
 include_once('includes/funciones/conexion.php');
@@ -10,14 +14,16 @@ include('includes/templates/header.php');
 
  ?>
 
+<div class="tabla">
+
 
     <section class="seccion contenedor">
           <h2>HungrOff</h2>
           <p></p>
-          <table align="center">
-           <thead>
+          <table align="center"   >
+           <thead >
              <tr>
-               <th>¿Que puedo donar?</th>
+               <th colspan="2"  >¿Que puedo donar?</th>
              </tr>
            </thead>
 
@@ -51,16 +57,16 @@ include('includes/templates/header.php');
 
 
 </seccion>
-
+</div>
       <div class="mapa" id="mapa">
 
       </div>
 
-      <section class="seccion">
+
 
     <div class="testimoniales contenedor clearfix">
       <div class="testimonial">
-        <blockquote cite="http://">
+        <blockquote cite="http://" class="container">
           <p>Apasionada del arte, el deporte y al educacion</p>
        <ul>
          <li>Estudiante de la Licenciatura en Química. </li>
@@ -69,7 +75,7 @@ include('includes/templates/header.php');
          <li>Miembro de VIRAL (Vinculación de Redes de Acción Local), Jalisco.</li>
          <li>Experiencia diversa en emprendimiento, inovación y desarrollo científico.</li>
        </ul>
-        <footer class="info-testimoniales clearfix">
+        <footer class="info-testimoniales clearfix blockquote-footer">
           <img src="img/Denisse.jpg" alt="imagenTestimonial" >
          <cite>Denisse Moran <span>Autora intelectual</span></cite>
         </footer>
@@ -77,23 +83,22 @@ include('includes/templates/header.php');
       </div><!-- Testimonial -->
 
       <div class="testimonial">
-        <blockquote>
+        <blockquote class="container">
           <p>Informatico ,amante de la tecnologia y tambien de la musica</p>
         <ul>
           <li>Estudiante de informatica.</li>
           <li>Maestro de ingles</li>
           <li>Musico</li>
         </ul>
-          <footer class="info-testimoniales clearfix" >
+          <footer class="info-testimoniales clearfix blockquote-footer" >
             <img src="img/Joel.jpg" alt="imagenTestimonial" >
           <cite>Joel Torres <span>Desarrollador</span></cite>
           </footer>
         </blockquote>
       </div> <!-- Testimonial -->
 
-    </div><!--seccion-->
+    </div><!--Testimoniales-->
 
-    </section>
 
 
 
@@ -108,7 +113,7 @@ include('includes/templates/header.php');
                 while($row = mysqli_fetch_assoc($resultado)) {
                 $nombre = $row["nombre"];
                 $apellido =$row['apellido'];
-                echo $nombre,$apellido;
+
 
   }
           }catch(Exception $e){

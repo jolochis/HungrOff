@@ -9,9 +9,10 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
+        <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -20,12 +21,9 @@
 
 
     <header class="site-header">
-      <div class="ingreso">
-        <a href="registro.php">Registrate</a>
-        <a href="login.php">Ingresa</a>
-      </div>
-    
-      <div class="hero">
+
+
+      <div class="hero" onclick="location.href='index.php';" style="cursor:pointer;">
 
         <div class="intro">
           <p></p>

@@ -1,60 +1,67 @@
 <?php include('includes/templates/header.php'); ?>
 
-    <section class="seccion contenedor">
-          <h2>HungrOff</h2>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<section class="seccion contenedor">
 
 
-          <form action="validar.php" class="registro" method="post">
-            <div class="registro caja clearfix" id="datos_usuario">
+  <div class="container">
 
 
-              <div class="radio">
-                <select class="seleccion" name="select" required>
-                  <option value="">Elige opción</option>
-                  <option value="1">Donante</option>
-                  <option value="2">Voluntario</option>
-                </select>
-
-              </div>
-          	<div class="campo">
-          		<label for="nombre">Nombre</label>
-              <input type="text" name="nombre" value="" id="nombre" required>
+      <form action="validar.php" class="" method="post">
+        <div class="registro caja clearfix" id="datos_usuario">
+            <div class="container">
+              <h2>HungrOff</h2>
             </div>
-            <div class="campo">
-          		<label for="apellido">Apellido </label>
-              <input type="text" id="apellido" name="apellido" required>
-            </div>
-            <div class="campo">
-              <label for="contra">Contraseña </label>
-              <input type="password" id="pass" name="pass" required>
-            </div>
-            <div class="campo">
-          		<label for="email">Correo</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-              <input type="submit" value="Registrar" name="submit">
-              <div id="error"></div>
-            </div> <!-- datos de usuario-->
+
+          <div class="radio">
+            <select class="input-lg" name="select" required>
+              <option value="">Elige opción</option>
+              <option value="1">Donante</option>
+              <option value="2">Voluntario</option>
+            </select>
+
+          </div>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" value="" id="nombre" class="form-control" required>
+        </div>
+        <div class="campo">
+          <label for="apellido">Apellido </label>
+          <input type="text" id="apellido" name="apellido" class="form-control" required>
+        </div>
+        <div class="campo">
+          <label for="contra">Contraseña </label>
+          <input type="password" id="pass" name="pass" class="form-control" required>
+        </div>
+        <div class="campo">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="help-block">
+          <i>Se parte de esta gran familia dispueta a ayudar y acabar con el hambre</i>
+
+        </div>
+          <input type="submit" value="Registrar" name="submit" class="btn btn-lg btn-primary btn-block signup-btn">
 
 
-          </form>
+          <div id="error"></div>
+
+        </div> <!-- datos de usuario-->
 
 
+      </form>
+
+</div><!--container-->
 
 
 </seccion>
+
+
 <script>
 /*
-document.getElementById("nombre").onclick = displayDate;
-
-function displayDate() {
-    document.getElementById("error").innerHTML = Date();
-}
-*/
-</script>
-
-<script>
-
 function myFunction() {
     nombre.addEventListener('blur', myFunction);
   var errorDiv = document.getElementById('error');
@@ -68,7 +75,7 @@ function myFunction() {
     this.style.border = '1px solid #cccccc';
   }
 
-}/*
+}
 nombre.addEventListener('click',input);
     function input(){
       console.log("as");

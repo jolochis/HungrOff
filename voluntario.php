@@ -42,38 +42,73 @@ if ($_SESSION['tipo']!=2)
     </header>
 
     <section class="seccion contenedor">
-          <h2>Organizacion</h2>
+          <h2>HungrOff</h2>
 
-          <div class="registroV caja clearfix">
+          <div class="">
+            <table>
+              <?php
+                try {
+                  include_once("includes/funciones/conexion.php");
+                  $sql = "SELECT * FROM donaciones";
+                  $resultado = $conexion->query($sql);
 
-
-        <form class="form clearfix" id="campo" action="index.html" method="post">
-            <div class="campo" >
-              <label for="nombre">Nombre:</label>
-              <input type="text" name="nombre" id="nombre" value="" placeholder="ingrese nombre">
-            </div>
-            <div class="campo">
-              <label for="ubicacion">Ubicacion:</label>
-              <input type="text" name="ubicacion" id="ubicacion" value="" placeholder="ingrese ubicaion">
-            </div>
-            <div class="campo">
-              <label for="descripcion">Descripcion:</label>
-           <input type="text" name="descripcion" id="descripcion" value="" placeholder="ingrese descripcion">
-            </div>
+                } catch (\Exception $e) {
+                    $error = $e->getMessage();
+                }
 
 
+                ?>
+
+<?php ini_set('display_errors', 1); ?>
+              <thead>
+                <tr>
+                  <th>Donaciones</th>
+                </tr>
+              </thead>
+            <tbody>
+          <th>lugar</th>
+              <tr>
+                <td>
+                  <?php
+                  foreach ($resultado as $don) {
+                    echo $don['zona'];
 
 
-        <!--     <input type="submit" name="" value="Enviar"><br><br>-->
+                  }
+                  ?>
+                </td>
+              </tr>
+        <th>Descripcion</th>
+              <tr>
 
-        </form>
-      </div><!--formulario -->
+              <td>
+                <?php
+                  foreach ($resultado as $don) {
+                echo $don['descripcion'];
+
+              }
+              ?>
+              </td>
+              </tr>
+              <tr>
+                <th>tipo de articulo</th>
+                <tr>
+                  <td>
+                    <?php
+                      while($don = $resultado->fetch_array(MYSQLI_ASSOC)) {
+                      echo $don['tipo_articulo'];
+
+                    }
+                    ?>
+                  </td>
+                </tr>
+              </tr>
+            </tbody>
+            </table>
+          </div>
 
 
-    <!--     <input type="submit" name="" value="Enviar"><br><br>-->
 
-    </form>
-  </div><!--formulario -->
 
 </seccion>
 

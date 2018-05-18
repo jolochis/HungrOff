@@ -2,7 +2,7 @@
   $nombre      = $_POST['nombre'];
   $apellido    = $_POST['apellido'];
 //  $pass        = $_POST['pass'];
-  $pass        =htmlspecialchars(trim("$_POST['password']"));
+  $pass        = htmlspecialchars(trim($_POST['password']));
   $pass_hashed = password_hash($pass, PASSWORD_BCRYPT);
   $correo      = $_POST['email'];
   $id          =$_POST['select'];
@@ -13,7 +13,6 @@ ini_set('display_errors', 1);
             $stmt = $conexion->prepare("INSERT INTO usuarios (nombre,apellido,correo,pass,id_tipo_usuario) VALUES (?,?,?,?,?)");
             $stmt-> bind_param("ssssi", $nombre,$apellido,$correo,$pass_hashed,$id);
             $stmt->execute();
-
             $stmt->close();
             $conexion->close();
           header('Location:validar.php?exitoso=1');

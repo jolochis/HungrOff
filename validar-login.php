@@ -20,6 +20,8 @@ try{
           $_SESSION['usuario'] = $nombre;
           $_SESSION['tipo'] = $id_tipo_usuario;
           $_SESSION['logged'] = true;
+          $_SESSION['id'] = $id_usuario;
+
           if ($id_tipo_usuario == 1) {
             header('Location:donante.php');
           }else {
